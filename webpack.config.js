@@ -117,7 +117,7 @@ function recursiveReaddirSync(folderPath) {
 }
 
 function getEntries() {
-    const basePath = path.resolve(__dirname, './src/static/pages');
+    const basePath = path.resolve(__dirname, './src/pages');
     const folderNames = fs.readdirSync(basePath);
 
     const allEntryPath = folderNames.reduce((entryPaths, folderName) => {
@@ -151,7 +151,7 @@ function getEntries() {
             filename: `${fileName}/index.html`,
             template: path.resolve(
                 __dirname,
-                `./src/pages/${fileName}/index.html`
+                `./public/${fileName}/index.html`
             ),
             chunks: [fileName],
         });
